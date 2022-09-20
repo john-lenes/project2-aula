@@ -2,84 +2,82 @@ package domain;
 
 public class Triangulo {
 
-    private double lado1;
+    private double l1;
 
-    private double lado2;
+    private double l2;
 
-    private double lado3;
+    private double l3;
 
-    public Triangulo(double lado1, double lado2, double lado3) throws Exception {
-        if (lado1 < 0 || lado1 > 99 || lado2 < 0 || lado2 > 99 || lado3 < 0 || lado3 > 99) {
-            throw new Exception("0 - Entrada Inválida");
-        }
-        if (lado1 + lado2 <= lado3 || lado2 + lado3 <= lado1 || lado1 + lado3 <= lado2) {
-            throw  new Exception("4 - Os valores informados não formam um triângulo.");
-        }
+    public Triangulo(double l1, double l2, double l3)  {
+
+        if (l1 < 0 || l1 > 99 || l2 < 0 || l2 > 99 || l3 < 0 || l3 > 99) {}
+
+        if (l1 + l2 <= l3 || l2 + l3 <= l1 || l1 + l3 <= l2) {}
+
         double d;
 
-
-        if (lado2 == lado3 && lado2 > lado1) {
+        if (l2 == l3 && l2 > l1) {
             d = 0;
-            d = lado1;
-            lado1 = lado2;
-            lado2 = d;
+            d = l1;
+            l1 = l2;
+            l2 = d;
         }
 
-        if (lado2 > lado1 && lado2 > lado3) {
+        if (l2 > l1 && l2 > l3) {
             d = 0;
-            d = lado1;
-            lado1 = lado2;
-            lado2 = d;
+            d = l1;
+            l1 = l2;
+            l2 = d;
         }
 
-        if (lado3 > lado1 && lado3 > lado2) {
+        if (l3 > l1 && l3 > l2) {
             d = 0;
-            d = lado1;
-            lado1 = lado3;
-            lado3 = d;
+            d = l1;
+            l1 = l3;
+            l3 = d;
         }
         int quantidadeDeLadosIguais = 0;
-        if (lado1 == lado2 && lado1 != lado3) {
+        if (l1 == l2 && l1 != l3) {
             quantidadeDeLadosIguais = 2;
         }
 
-        if (lado1 == lado3 && lado1 != lado2) {
+        if (l1 == l3 && l1 != l2) {
             quantidadeDeLadosIguais = 2;
         }
 
-        if (lado2 == lado3 && lado2 != lado1) {
+        if (l2 == l3 && l2 != l1) {
             quantidadeDeLadosIguais = 2;
         }
 
-        this.lado1=lado1;
-        this.lado2=lado2;
-        this.lado3=lado3;
+        if (l1 == l2 && l2 == l3) {}
+
+        if (quantidadeDeLadosIguais == 2) {}
+
+        if (l1 != l2 && l2 != l3) {}
+
+        this.l1=l1;
+        this.l2=l2;
+        this.l3=l3;
     }
 
-    public double getLado1(){
-        return lado1;
+    public double getl1(){
+        return l1;
     }
-    public double getLado2(){
-        return lado2;
+    public double getl2(){
+        return l2;
     }
-    public double getLado3(){
-        return lado3;
-    }
-
-    public void setLado1(double lado1) {
-        this.lado1=lado1;
-    }
-    public void setLado2(double lado2) {
-        this.lado2=lado2;
-    }
-    public void setLado3(double lado3) {
-        this.lado3 = lado3;
+    public double getl3(){
+        return l3;
     }
 
+    public void setl1(double l1) {
+        this.l1=l1;
+    }
+    public void setl2(double l2) {
+        this.l2=l2;
+    }
+    public void setl3(double l3) {
+        this.l3 = l3;
+    }
 
-    /*
-    * 1 - Equilátero
-    * 2 - Isóceles
-    * 3 - Escaleno
-    * */
 }
